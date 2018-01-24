@@ -1,0 +1,51 @@
+# Buildable is a module to create and validate new inserts and updates
+module Buildable
+  extend ActiveSupport::Concern
+
+  # build a complete update of the object
+  def build_update(params)
+    unless update_attributes(params)
+      error = errors.first
+      add_error_with_message!(error.first, error.last)
+    end
+    self
+  end
+
+  # build a complete update of the object and return changes
+  def build_update_with_changes(params)
+    related_changes = {}
+    self.attributes = params
+    valid? ? save_with_changes : raise_update_error
+  end
+
+  def save_with_changes
+    current = changes.clone
+    save
+    current
+  end
+
+  def raise_update_error
+    error = errors.first
+    add_error_with_message!(error.first, error.last)
+  end
+
+
+  def default_status
+    self.status = 0 if respond_to?(:status) && status.blank?
+  end
+
+  # build a new user with params, raise if has errors in validation
+  module ClassMethods
+    def build(params)
+      transaction do
+        object = new(params)
+        object.default_status
+        commit?(object) ? object : raise_model!(object.errors.first) 
+      end
+    end
+
+    def commit?(object)
+      object.valid? && object.save
+    end
+  end
+end
