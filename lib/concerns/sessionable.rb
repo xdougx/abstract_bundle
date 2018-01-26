@@ -4,20 +4,13 @@ module Sessionable
 
   # start the expiration date for session, 30 days
   def start_session
-    generate_token(:session_token)
+    generate_token(:token)
     setup_session
     update_last_session
   end
 
   def setup_session
-    if self.type.include?("Administration::Collaborator")
-      raise_has_no_access if access.blank?
-      now = Time.now.to_a
-      time = Time.new(now[5], now[4], now[3], access.end_time.hour, access.end_time.min, 0, "-03:00")
-      update_session(time)
-    else
-      update_session(30.days.from_now)
-    end
+    update_session(30.days.from_now)
   end
 
   # end the expiration date for session

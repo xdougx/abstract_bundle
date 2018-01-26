@@ -9,9 +9,9 @@ module AbstractBundle
       @params = params
     end
 
-    def self.get_builder(type, params)
+    def self.get_builder(type, *params)
       factory = new(type, params)
-      factory.get_constantized_type.new(params)
+      factory.get_constantized_type.new(*params)
     end
 
     def get_constantized_type
