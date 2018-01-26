@@ -6,3 +6,7 @@ require "concerns/jsonable"
 require "concerns/pageable"
 require "concerns/sessionable"
 require "concerns/tokenizable"
+
+require "concerns/pagination_concern"
+require "concerns/polymorphic_concern"
+require "concerns/sorting_concern"
