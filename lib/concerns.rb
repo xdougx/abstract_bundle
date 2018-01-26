@@ -1,6 +1,7 @@
 require "concerns/addressible"
 require "concerns/buildable"
 require "concerns/exceptional"
+require "concerns/findable"
 require "concerns/identification"
 require "concerns/jsonable"
 require "concerns/pageable"
