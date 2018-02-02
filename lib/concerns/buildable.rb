@@ -37,15 +37,19 @@ module Buildable
   # build a new user with params, raise if has errors in validation
   module ClassMethods
     def build(params)
-      transaction do
-        object = new(params)
-        object.default_status
-        commit?(object) ? object : raise_model!(object.errors.first) 
-      end
+      object = new(params)
+      object.default_status
+      commit?(object) ? object : raise_model!(object.errors.first) 
     end
 
     def commit?(object)
+      transaction { exec_commit(object) } if defined?(ActiveRecord)
+      exec_commit(object)
+    end
+
+    def exec_commit(object)
       object.valid? && object.save
     end
+
   end
 end

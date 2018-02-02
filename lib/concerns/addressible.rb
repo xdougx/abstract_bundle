@@ -9,7 +9,7 @@ module Addressible
 
   def add_address(params)
     remove_address
-    self.address = Address.new(params)
+    self.address = Address.build(params)
     save
   end
 
