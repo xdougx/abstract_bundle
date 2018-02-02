@@ -43,7 +43,7 @@ module Buildable
     end
 
     def commit?(object)
-      transaction { exec_commit(object) } if defined?(ActiveRecord)
+      transaction { exec_commit(object) } if ancestors.include?(ActiveRecord::Base)
       exec_commit(object)
     end
 
