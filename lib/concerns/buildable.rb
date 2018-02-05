@@ -31,7 +31,9 @@ module Buildable
 
 
   def default_status
-    self.status = 0 if respond_to?(:status) && status.blank?
+    return unless respond_to?(:status)
+    cur_status = respond_to?(:active!) ? 'status' : 0
+    self.status = cur_status if status.blank?
   end
 
   # build a new user with params, raise if has errors in validation
