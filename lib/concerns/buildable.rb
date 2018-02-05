@@ -32,7 +32,7 @@ module Buildable
 
   def default_status
     return unless respond_to?(:status)
-    cur_status = respond_to?(:active!) ? 'status' : 0
+    cur_status = respond_to?(:active!) ? 'active' : 0
     self.status = cur_status if status.blank?
   end
 
