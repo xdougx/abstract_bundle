@@ -2,7 +2,7 @@ require "active_support"
 require "active_support/inflector"
 require "active_support/concern"
 
-require "serializeble_resource"
+require "serializable_resource"
 
 require "abstract_bundle/version"
 require "abstract_bundle/interface"
