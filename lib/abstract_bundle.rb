@@ -1,6 +1,7 @@
 require "active_support"
 require "active_support/inflector"
 require "active_support/concern"
+require "active_model_serializer"
 
 require "serializable_resource"
 
