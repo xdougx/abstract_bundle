@@ -21,8 +21,8 @@ module Pageable
     end
 
     def get_serialized(objects)
-      # ActiveModelSerializers::SerializableResource.new(objects).as_json
-      objects
+      objects = include?(Mongoid::Document) ? objects.to_ary : objects
+      ActiveModelSerializers::SerializableResource.new(objects).as_json
     end
 
     def total_pages(per_page, page)
