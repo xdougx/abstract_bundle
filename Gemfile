@@ -7,6 +7,7 @@ gemspec
 
 gem 'activesupport'
 gem 'bcrypt'
+gem 'active_model_serializers'
 
 # rspec
 %w(rspec rspec-core rspec-mocks rspec-support

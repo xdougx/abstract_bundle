@@ -5,6 +5,7 @@ require "active_support/concern"
 require "abstract_bundle/version"
 require "abstract_bundle/interface"
 require "abstract_bundle/factory"
+require "abstract_bundle/serializeble_resource"
 
 require "concerns"
 
