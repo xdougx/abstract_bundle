@@ -9,10 +9,11 @@ require "abstract_bundle/version"
 require "abstract_bundle/interface"
 require "abstract_bundle/factory"
 
+puts ENV["PWD"]
 puts "LOL 1"
-puts Dir["./lib/concerns/**.rb"]
+puts Dir["lib/concerns/**.rb"]
 puts "LOL 2"
-puts Dir["./concerns/**.rb"]
+puts Dir["concerns/**.rb"]
 
 Dir["./concerns/**.rb"].each { |f| require f }
 Dir["./lib/concerns/**.rb"].each { |f| require f }
