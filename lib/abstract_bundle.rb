@@ -9,7 +9,9 @@ require "abstract_bundle/version"
 require "abstract_bundle/interface"
 require "abstract_bundle/factory"
 
-require "concerns"
+Dir["./lib/concerns/*.rb"].each { |f| require f }
+
+# require "concerns"
 
 
 module AbstractBundle
