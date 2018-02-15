@@ -1,5 +1,6 @@
 require "concerns/addressible"
 require "concerns/buildable"
+require "concerns/cacheable"
 require "concerns/constantizable"
 require "concerns/exceptional"
 require "concerns/findable"
