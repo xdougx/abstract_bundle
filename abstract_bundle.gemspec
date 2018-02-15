@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "redis"
   spec.add_runtime_dependency "activesupport"
-  spec.add_runtime_dependency "active_model_serializer"
+  spec.add_runtime_dependency "active_model_serializers"
   spec.add_runtime_dependency "bcrypt"
 
 
