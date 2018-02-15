@@ -4,7 +4,7 @@ module Cache
     include Cacheable
 
     # config
-    set_cache schema: { host: "127.0.0.1", port: 6379, db: 0 }, prefix: 'user'
+    set_cache prefix: 'user'
     delegate 'build_struct', to: Cache::StructHelper
 
     # attributes
