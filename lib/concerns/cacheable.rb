@@ -27,8 +27,8 @@ module Cacheable
     end
 
     def cache(object)
-      input = self.ancestors.include?(Serializable) ? object.serialized.to_json : Marshal.dump(object)
-      !!redis_schema.setex(generate_key(object.send(redis_key)), ttl, input)
+      
+      !!redis_schema.setex(generate_key(object.send(redis_key)), ttl, object.serialized_to_cache)
     end
 
     private
