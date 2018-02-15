@@ -6,11 +6,10 @@ module Cache
     attr_reader :repo, :prefix, :key, :ttl
 
     def initialize(prefix, params = {})
-      param = config.schema.merge(params[:schema]) if params.key?(:schema) 
       @prefix = params.key?(:prefix) ? params[:prefix] : prefix
       @key    = params.key?(:key)    ? params[:key]    : config.key
       @ttl    = params.key?(:ttl)    ? params[:ttl]    : config.ttl
-      @repo   = Redis.new(param) 
+      set_repo(params[:schema])
     end
 
     def get(value)
@@ -22,6 +21,12 @@ module Cache
     end
 
     private
+
+    def set_repo(params)
+      param = config.schema
+      param.merge(params) unless params.blank? || params.empty?
+      @repo = Redis.new(param) 
+    end
 
     def config
       Cache.config
