@@ -1,3 +1,4 @@
+require "redis"
 require "active_support"
 require "active_support/inflector"
 require "active_support/concern"
