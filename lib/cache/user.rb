@@ -4,7 +4,7 @@ module Cache
     include Cacheable
 
     # config
-    set_cache redis_schema: {host: "127.0.0.1", port: 6379 , db: 0, }, ttl: 2592000, redis_prefix: 'user'
+    set_cache schema: { host: "127.0.0.1", port: 6379, db: 0 }, prefix: 'user'
     delegate 'build_struct', to: Cache::StructHelper
 
     # attributes
