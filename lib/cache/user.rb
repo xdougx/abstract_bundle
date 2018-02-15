@@ -20,7 +20,7 @@ module Cache
 
     def set_params(params)
       params.each do |key, value|
-        value.is_a?(Hash) ? set_attr(key,  build_struct(value)) : set_attr(key, value)
+        value.is_a?(Hash) ? set_attr(key, build_struct(value)) : set_attr(key, value)
       end
     end
 
@@ -33,7 +33,8 @@ module Cache
       delegate 'parse', to: JSON
 
       def from_cache(id)
-        new(parse(get(id)))
+        raise_not_in_cache unless cached?(id)
+        new(parse(get(id))) 
       end
 
     end

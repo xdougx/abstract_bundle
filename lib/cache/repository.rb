@@ -20,6 +20,10 @@ module Cache
       !!repo.setex(generate_key(object.send(key)), ttl, object.serialized_to_cache)
     end
 
+    def exists?(value)
+      repo.exists(generate_key(value))
+    end
+
     private
 
     def set_repo(params)

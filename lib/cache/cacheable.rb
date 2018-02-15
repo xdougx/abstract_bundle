@@ -37,6 +37,14 @@ module Cache
         repository.set(object)
       end
 
+      def raise_not_in_cache
+        raise Exceptions::Simple.build(message: 'not available in cache', field: 'id')
+      end
+
+      def cached?(value)
+        repository.exists?(value)
+      end
+
     end
   end
 end
