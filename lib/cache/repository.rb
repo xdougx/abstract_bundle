@@ -6,7 +6,7 @@ module Cache
     attr_reader :repo, :prefix, :key, :ttl
 
     def initialize(prefix, params)
-      @repo  = Redis.new(config.scheema.merge!(params[:schema]))
+      @repo  = Redis.new(config.schema.merge!(params[:schema]))
       @prefix = params.key?(:prefix) ? params[:prefix] : prefix
       @key    = params.key?(:key)    ? params[:key]    : config.key
       @ttl    = params.key?(:ttl)    ? params[:ttl]    : config.ttl

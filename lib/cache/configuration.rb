@@ -7,8 +7,6 @@ module Cache
   #       db: 0
   #     }
   #     config.ttl = 99999
-  #     config.key = 'user_id'
-  #     config.env = :development
   #   end
   def self.configure(&_block)
     yield(config())
