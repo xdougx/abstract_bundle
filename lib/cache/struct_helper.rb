@@ -3,7 +3,7 @@ module Cache
     class << self
       def build_struct(hash)
         struct = new(*hash.keys.map(&:to_sym))
-        struct.new(*hash.values.map)
+        struct.new(*hash.values)
       end
     end
   end
