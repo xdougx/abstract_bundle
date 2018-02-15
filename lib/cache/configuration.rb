@@ -7,6 +7,7 @@ module Cache
   #       db: 0
   #     }
   #     config.ttl = 99999
+  #     config.key = 'user_id'
   #   end
   def self.configure(&_block)
     yield(config())
