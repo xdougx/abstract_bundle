@@ -20,9 +20,9 @@ module Cache
     # class methods
     module ClassMethods
       attr_reader :repository
-      
+
       def serializable?
-        self.class.ancestors.include?(Serializable)
+        ancestors.include?(Serializable)
       end
 
       def set_cache(params = {})
