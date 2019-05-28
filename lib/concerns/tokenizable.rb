@@ -7,11 +7,11 @@ module Tokenizable
     update_attribute(attr, SecureRandom.hex(16))
   end
 
-  def validate_token(token)
-    current_token?(token) ? true : self.class.raise_simple(:session_token, 'exceptions.auth.token')
+  def validate_token(token, attr)
+    current_token?(token, attr) ? true : self.class.raise_simple(attr, 'exceptions.auth.token')
   end
 
-  def current_token?(token)
-    token == session_token
+  def current_token?(token, attr)
+    token == send(attr)
   end
 end
