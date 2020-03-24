@@ -21,7 +21,7 @@ module Pageable
     end
 
     def get_serialized(objects)
-      objects = include?(Mongoid::Document) ? objects.to_ary : objects
+      objects = objects.to_ary if defined?(Mongoid) && include?(Mongoid::Document)
       ActiveModelSerializers::SerializableResource.new(objects).as_json
     end
 
