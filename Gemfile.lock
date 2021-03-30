@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rspec/rspec
-  revision: 3e6c0fb9c9ec68eddd409cfe7b3eb077b390b302
+  revision: 28443b6392c976f40ab323c11574cf5f00faa68c
   branch: master
   specs:
     rspec (3.10.0.pre)
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-core
-  revision: 002ebcb65324bca7b3ee044e22f4c02133fce14d
+  revision: e7c5d030966a7e8dad3e0a67c61920c4f2437c15
   branch: master
   specs:
     rspec-core (3.10.0.pre)
@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-expectations
-  revision: 9f224eaeb5c6d7eaaab0f7f6e355efd9329328f8
+  revision: e63ff4765e1cd2798b02ddddad259f1104ef87a5
   branch: master
   specs:
     rspec-expectations (3.10.0.pre)
@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-its
-  revision: 801ce01019182b7501e0957f4f50fbde90686907
+  revision: aca1c95014578cfc43b27dc0ff259909e4c4cd87
   branch: master
   specs:
     rspec-its (1.3.0)
@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-mocks
-  revision: 81c17e89b2722cb225d602e08b600e4a4f6148a4
+  revision: 0a52e0a86b126b4bab94d277b2ad99a7492dc37d
   branch: master
   specs:
     rspec-mocks (3.10.0.pre)
@@ -45,7 +45,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-support
-  revision: 63c03e5e6f0ac858398933f820d37087f57c315a
+  revision: 6447b0c2c9d1cd3e1504784fb85675ca9ae7b7c3
   branch: master
   specs:
     rspec-support (3.10.0.pre)
@@ -53,7 +53,7 @@ GIT
 PATH
   remote: .
   specs:
-    abstract_bundle (0.1.15.13)
+    abstract_bundle (0.1.15.16)
       active_model_serializers
       activesupport
       bcrypt
@@ -62,51 +62,53 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    actionpack (6.0.2.2)
-      actionview (= 6.0.2.2)
-      activesupport (= 6.0.2.2)
-      rack (~> 2.0, >= 2.0.8)
+    actionpack (6.1.3.1)
+      actionview (= 6.1.3.1)
+      activesupport (= 6.1.3.1)
+      rack (~> 2.0, >= 2.0.9)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.2.0)
-    actionview (6.0.2.2)
-      activesupport (= 6.0.2.2)
+    actionview (6.1.3.1)
+      activesupport (= 6.1.3.1)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    active_model_serializers (0.10.10)
-      actionpack (>= 4.1, < 6.1)
-      activemodel (>= 4.1, < 6.1)
+    active_model_serializers (0.10.12)
+      actionpack (>= 4.1, < 6.2)
+      activemodel (>= 4.1, < 6.2)
       case_transform (>= 0.2)
       jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
-    activemodel (6.0.2.2)
-      activesupport (= 6.0.2.2)
-    activesupport (6.0.2.2)
+    activemodel (6.1.3.1)
+      activesupport (= 6.1.3.1)
+    activesupport (6.1.3.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 0.7, < 2)
-      minitest (~> 5.1)
-      tzinfo (~> 1.1)
-      zeitwerk (~> 2.2)
-    bcrypt (3.1.13)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
+    bcrypt (3.1.16)
     builder (3.2.4)
     case_transform (0.2)
       activesupport
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.8)
     crass (1.0.6)
-    diff-lcs (1.3)
-    erubi (1.9.0)
-    i18n (1.8.2)
+    diff-lcs (1.4.4)
+    erubi (1.10.0)
+    i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     jsonapi-renderer (0.2.2)
-    loofah (2.4.0)
+    loofah (2.9.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mini_portile2 (2.4.0)
-    minitest (5.14.0)
-    nokogiri (1.10.9)
-      mini_portile2 (~> 2.4.0)
-    rack (2.2.2)
+    mini_portile2 (2.5.0)
+    minitest (5.14.4)
+    nokogiri (1.11.2)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    racc (1.5.2)
+    rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails-dom-testing (2.0.3)
@@ -114,12 +116,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.3.0)
       loofah (~> 2.3)
-    rake (10.5.0)
-    redis (4.1.3)
-    thread_safe (0.3.6)
-    tzinfo (1.2.6)
-      thread_safe (~> 0.1)
-    zeitwerk (2.3.0)
+    rake (13.0.3)
+    redis (4.2.5)
+    tzinfo (2.0.4)
+      concurrent-ruby (~> 1.0)
+    zeitwerk (2.4.2)
 
 PLATFORMS
   ruby
@@ -130,7 +131,7 @@ DEPENDENCIES
   activesupport
   bcrypt
   bundler (~> 1.16.a)
-  rake (~> 10.0)
+  rake (>= 12.3.3)
   redis
   rspec!
   rspec-core!
