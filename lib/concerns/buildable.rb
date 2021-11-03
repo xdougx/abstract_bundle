@@ -4,7 +4,7 @@ module Buildable
 
   # build a complete update of the object
   def build_update(params)
-    unless update_attributes(params)
+    unless update(params)
       error = errors.first
       add_error_with_message!(error.first, error.last)
     end
