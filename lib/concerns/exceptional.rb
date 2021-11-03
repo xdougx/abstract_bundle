@@ -49,11 +49,11 @@ module Exceptional
     end
 
     def attribute
-      error.first
+      error.attribute
     end
 
     def message
-      error.last
+      error.message
     end
   end
 end
