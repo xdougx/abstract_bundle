@@ -6,7 +6,7 @@ module Buildable
   def build_update(params)
     unless update(params)
       error = errors.first
-      add_error_with_message!(error.first, error.last)
+      add_error_with_message!(error.attribute, error.message)
     end
     self
   end
