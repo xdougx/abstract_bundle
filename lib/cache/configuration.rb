@@ -26,7 +26,7 @@ module Cache
 
     # constructor that set default values
     def initialize
-      @schema = { uri: "127.0.0.1:6379/0" }
+      @schema = { url: "127.0.0.1", port: 6379, db: 0 }
       @ttl = 2592000
       @key = 'id'
     end
