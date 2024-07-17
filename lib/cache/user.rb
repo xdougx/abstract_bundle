@@ -4,7 +4,7 @@ module Cache
     include Cacheable
 
     # config
-    set_cache prefix: 'user'
+    # set_cache prefix: 'user',
     delegate 'build_struct', to: Cache::StructHelper
 
     # attributes
